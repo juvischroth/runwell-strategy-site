@@ -981,21 +981,36 @@
     background: none;
     border: 1px solid var(--border);
     cursor: pointer;
-    padding: 8px 10px;
+    padding: 8px 14px;
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
     transition: border-color 0.3s;
   }
+  .hamburger-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    transition: color 0.3s;
+  }
+  .hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hamburger:hover .hamburger-label { color: var(--gold); }
   .hamburger:hover { border-color: var(--gold); }
-  .hamburger span {
+  .hamburger-lines span {
     display: block;
-    width: 22px;
+    width: 18px;
     height: 1px;
     background: var(--cream);
     transition: background 0.3s;
   }
-  .hamburger:hover span { background: var(--gold); }
+  .hamburger:hover .hamburger-lines span { background: var(--gold); }
 
   /* ─── Nav Overlay ─── */
   .nav-overlay {
@@ -1110,7 +1125,8 @@
   <div class="nav-right">
     <a href="mailto:runwellops@gmail.com?subject=Discovery%20Call%20Request&body=Hi%20Juvi%2C%20I%20came%20across%20your%20site%20and%20would%20love%20to%20schedule%20a%20discovery%20call." class="btn-ghost desktop-only">Book a Call</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
+      <span class="hamburger-label">Menu</span>
+      <span class="hamburger-lines"><span></span><span></span><span></span></span>
     </button>
   </div>
 </nav>
